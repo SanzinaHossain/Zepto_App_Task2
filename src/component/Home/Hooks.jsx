@@ -5,7 +5,7 @@ export default function BookHooks() {
   const { books, dataLoading } = BookFetchHooks();
 
   const [currentPage, setCurrentPage] = useState(1);
-  const booksPerPage = 4;
+  const booksPerPage = 8;
 
   const indexOfLastBook = currentPage * booksPerPage;
   const indexOfFirstBook = indexOfLastBook - booksPerPage;

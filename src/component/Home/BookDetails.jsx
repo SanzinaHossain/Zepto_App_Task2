@@ -13,7 +13,7 @@ export default function BookDetails({ index, book }) {
       <p className="mt-1 text-center">
         Language : {book.languages[0] === "en" ? "English" : "N/A"}
       </p>
-      <button className="px-4 py-1 rounded-sm text-white bg-first mt-3">
+      <button className="px-4 py-1 rounded-sm text-white bg-first mt-3 cursor-pointer">
         Details
       </button>
     </div>
