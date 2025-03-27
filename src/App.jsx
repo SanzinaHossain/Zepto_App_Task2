@@ -1,5 +1,8 @@
 import { useState } from "react";
 import "./App.css";
+import { Outlet } from "react-router-dom";
+import Footer from "./component/Footer/Footer";
+import Navbar from "./component/Navbar";
 
 export default function App() {
   const [books, setBooks] = useState();
@@ -9,5 +12,11 @@ export default function App() {
       console.log(data.results);
       setBooks(data.results);
     });
-  return <button className="btn btn-secondary">{books.length}</button>;
+  return (
+    <>
+      <Navbar />
+      <Outlet />
+      <Footer />
+    </>
+  );
 }
