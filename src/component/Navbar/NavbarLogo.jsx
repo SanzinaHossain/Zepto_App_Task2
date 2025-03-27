@@ -1,16 +1,9 @@
-/*
-Author: Sanzina Hossain
-Organization: Niret InfoTech Limited
-All right reserved by @niret_dev
-*/
-
 import { ImMenu } from "react-icons/im";
 import { Link, NavLink } from "react-router-dom";
 import NavbarData from "./NavbarData";
 
 export default function NavbarLogo() {
   const { navbarMenuList } = NavbarData();
-
   return (
     <div className="navbar-start">
       <div className="drawer visible lg:hidden md:hidden">

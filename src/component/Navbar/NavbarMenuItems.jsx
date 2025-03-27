@@ -1,15 +1,8 @@
-/*
-Author: Sanzina Hossain
-Organization: Niret InfoTech Limited
-All rights reserved by @niret_dev
-*/
-
 import { NavLink } from "react-router-dom";
 import NavbarData from "./NavbarData";
 
 export default function NavbarMenuItems() {
   const { navbarMenuList } = NavbarData();
-
   return (
     <div className="navbar-center hidden lg:flex md:flex text-lg">
       <ul className="menu menu-horizontal px-1 text-lg focus:outline-none focus:ring-0">

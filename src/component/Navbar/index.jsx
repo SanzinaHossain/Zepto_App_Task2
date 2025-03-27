@@ -1,20 +1,11 @@
-/*
-Author: Sanzina Hossain
-Organization: Niret InfoTech Limited
-All right reserved by @niret_dev
-*/
-
 import NavbarLogo from "./NavbarLogo";
 import NavbarManuItems from "./NavbarMenuItems";
 
 export default function Navbar() {
-  //   const navigate = useNavigate();
   return (
     <div className="navbar bg-first text-white text-xs fixed top-0 left-0 right-0 z-10 shadow-lg">
       <NavbarLogo />
-
       <NavbarManuItems />
-
       <div className=" navbar-end">
         <div
           tabIndex={0}
