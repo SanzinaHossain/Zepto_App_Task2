@@ -34,18 +34,22 @@ export default function BookDetailsTable({ book }) {
                 ))}
               </td>
               <td className="p-3 border border-gray-300">
-                <ul>
-                  {book.subjects.map((s, index) => (
-                    <li key={index}>{s}</li>
-                  ))}
-                </ul>
+                <div>
+                  <ul>
+                    {book.subjects.map((s, index) => (
+                      <li key={index}>{s}</li>
+                    ))}
+                  </ul>
+                </div>
               </td>
               <td className="p-3 border border-gray-300">
-                <ul>
-                  {book.bookshelves.map((b, index) => (
-                    <li key={index}>{b}</li>
-                  ))}
-                </ul>
+                <div>
+                  <ul>
+                    {book.bookshelves.map((b, index) => (
+                      <li key={index}>{b}</li>
+                    ))}
+                  </ul>
+                </div>
               </td>
             </tr>
           </tbody>
@@ -73,20 +77,24 @@ export default function BookDetailsTable({ book }) {
           </p>
           <p>
             <strong>Subjects:</strong>
+          </p>
+          <div>
             <ul className="list-disc list-inside">
               {book.subjects.map((s, index) => (
                 <li key={index}>{s}</li>
               ))}
             </ul>
-          </p>
+          </div>
           <p>
             <strong>Bookshelves:</strong>
+          </p>
+          <div>
             <ul className="list-disc list-inside">
               {book.bookshelves.map((b, index) => (
                 <li key={index}>{b}</li>
               ))}
             </ul>
-          </p>
+          </div>
         </div>
       </div>
     </div>
