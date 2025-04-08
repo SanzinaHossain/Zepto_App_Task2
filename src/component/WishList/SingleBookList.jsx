@@ -1,26 +1,9 @@
-import { FaHeart, FaRegHeart } from "react-icons/fa";
-
-export default function BookDetails({
-  index,
-  book,
-  handleBookWishlist,
-  wishlist,
-}) {
-  const isWished = wishlist.some((item) => item.id === book.id);
-
+export default function SingleBookList({ index, book }) {
   return (
     <div
       key={index}
       className="relative border border-gray-300 shadow-lg rounded-sm p-5 flex flex-col justify-center items-center"
     >
-      <button onClick={() => handleBookWishlist(book)}>
-        {isWished ? (
-          <FaHeart className="absolute top-2 right-2 text-red-500 cursor-pointer text-2xl" />
-        ) : (
-          <FaRegHeart className="absolute top-2 right-2 text-gray-600 hover:text-red-500 cursor-pointer text-2xl" />
-        )}
-      </button>
-
       <img src={book.formats["image/jpeg"]} alt={book.title} className="h-36" />
       <h1 className="mt-4 text-center playwrite-is-title text-first ">
         {book.title}

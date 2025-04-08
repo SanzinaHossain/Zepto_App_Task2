@@ -5,8 +5,15 @@ import BookHooks from "./Hooks";
 import Pagination from "./Pagination";
 
 export default function Home() {
-  const { currentPage, setCurrentPage, currentBooks, totalPages, dataLoading } =
-    BookHooks();
+  const {
+    currentPage,
+    setCurrentPage,
+    currentBooks,
+    totalPages,
+    dataLoading,
+    handleBookWishlist,
+    wishlist,
+  } = BookHooks();
 
   return (
     <div className="p-10 flex flex-col justify-center items-center">
@@ -15,9 +22,15 @@ export default function Home() {
         <LoadingPage />
       ) : (
         <>
-          <div className="grid grid-cols-4 gap-5 mt-12">
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 mt-12">
             {currentBooks?.map((book, index) => (
-              <BookDetails index={index} book={book} />
+              <BookDetails
+                key={index}
+                index={index}
+                book={book}
+                handleBookWishlist={handleBookWishlist}
+                wishlist={wishlist}
+              />
             ))}
           </div>
           <Pagination

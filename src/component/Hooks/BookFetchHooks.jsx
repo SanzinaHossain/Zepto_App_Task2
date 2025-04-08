@@ -13,13 +13,20 @@ export default function BookFetchHooks() {
         }
         const data = await res.json();
         setBooks(data.results);
+        localStorage.setItem("books", JSON.stringify(data.results));
         setDataLoading(false);
       } catch (error) {
         console.error("Error fetching Books:", error);
       }
     };
 
-    fetchBooks();
+    const storedBooks = localStorage.getItem("books");
+    if (storedBooks) {
+      setBooks(JSON.parse(storedBooks));
+      setDataLoading(false);
+    } else {
+      fetchBooks();
+    }
   }, []);
 
   return { books, setBooks, dataLoading };
