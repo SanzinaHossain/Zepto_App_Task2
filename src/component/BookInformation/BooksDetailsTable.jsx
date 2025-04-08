@@ -20,8 +20,8 @@ export default function BookDetailsTable({ book }) {
                 {book.download_count}
               </td>
               <td className="p-3 border border-gray-300">
-                {book.authors.map((item, i) => (
-                  <span key={i}>{item.name}</span>
+                {book.authors.map((item, index) => (
+                  <span key={index}>{item.name}</span>
                 ))}
               </td>
               <td className="p-3 border border-gray-300">{book.media_type}</td>
@@ -29,21 +29,21 @@ export default function BookDetailsTable({ book }) {
                 {book.copyright ? "True" : "False"}
               </td>
               <td className="p-3 border border-gray-300">
-                {book.languages.map((lang, i) => (
-                  <span key={i}>{lang === "en" ? "English" : lang}</span>
+                {book.languages.map((lang, index) => (
+                  <span key={index}>{lang === "en" ? "English" : lang}</span>
                 ))}
               </td>
               <td className="p-3 border border-gray-300">
                 <ul>
-                  {book.subjects.map((s, i) => (
-                    <li key={i}>{s}</li>
+                  {book.subjects.map((s, index) => (
+                    <li key={index}>{s}</li>
                   ))}
                 </ul>
               </td>
               <td className="p-3 border border-gray-300">
                 <ul>
-                  {book.bookshelves.map((b, i) => (
-                    <li key={i}>{b}</li>
+                  {book.bookshelves.map((b, index) => (
+                    <li key={index}>{b}</li>
                   ))}
                 </ul>
               </td>
@@ -58,7 +58,7 @@ export default function BookDetailsTable({ book }) {
             <strong>Download:</strong> {book.download_count}
           </p>
           <p>
-            <strong>Author:</strong>{" "}
+            <strong>Author:</strong>
             {book.authors.map((a) => a.name).join(", ")}
           </p>
           <p>
@@ -68,22 +68,22 @@ export default function BookDetailsTable({ book }) {
             <strong>Copyright:</strong> {book.copyright ? "True" : "False"}
           </p>
           <p>
-            <strong>Languages:</strong>{" "}
+            <strong>Languages:</strong>
             {book.languages.map((l) => (l === "en" ? "English" : l)).join(", ")}
           </p>
           <p>
             <strong>Subjects:</strong>
             <ul className="list-disc list-inside">
-              {book.subjects.map((s, i) => (
-                <li key={i}>{s}</li>
+              {book.subjects.map((s, index) => (
+                <li key={index}>{s}</li>
               ))}
             </ul>
           </p>
           <p>
             <strong>Bookshelves:</strong>
             <ul className="list-disc list-inside">
-              {book.bookshelves.map((b, i) => (
-                <li key={i}>{b}</li>
+              {book.bookshelves.map((b, index) => (
+                <li key={index}>{b}</li>
               ))}
             </ul>
           </p>
