@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import LoadingPage from "../LoadingPage/LoadingPage";
 import WishList from "../WishList";
 import BookDetails from "./BookDetails";
@@ -16,20 +17,41 @@ export default function Home() {
     filteredBooks,
     searchText,
     setSearchText,
+    selectedGenre,
+    setSelectedGenre,
+    allGenres,
   } = BookHooks();
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, []);
 
   return (
     <div>
       <div className="p-10 flex flex-col justify-center items-center">
         <Cover />
 
-        <input
-          type="text"
-          placeholder="Search books by title..."
-          value={searchText}
-          onChange={(e) => setSearchText(e.target.value)}
-          className="mt-8 p-2 w-full max-w-md border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-first"
-        />
+        <div className="flex gap-5 justify-center items-center">
+          <input
+            type="text"
+            placeholder="Search books by title..."
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+            className="mt-8 p-2 w-full max-w-md border border-gray-500 rounded-sm focus:outline-none focus:ring-1 focus:ring-first"
+          />
+          <select
+            value={selectedGenre}
+            onChange={(e) => setSelectedGenre(e.target.value)}
+            className="mt-8 p-2 w-full max-w-md border border-gray-500 rounded-sm focus:outline-none focus:ring-1 focus:ring-first"
+          >
+            <option value="">All Genres</option>
+            {allGenres.map((genre, idx) => (
+              <option key={idx} value={genre}>
+                {genre}
+              </option>
+            ))}
+          </select>
+        </div>
 
         {dataLoading ? (
           <LoadingPage />
