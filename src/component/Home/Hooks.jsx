@@ -3,6 +3,7 @@ import BookFetchHooks from "../Hooks/BookFetchHooks";
 
 export default function BookHooks() {
   const { books, dataLoading } = BookFetchHooks();
+  const [searchText, setSearchText] = useState("");
 
   const [currentPage, setCurrentPage] = useState(1);
   const booksPerPage = 8;
@@ -32,6 +33,10 @@ export default function BookHooks() {
     localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
   };
 
+  const filteredBooks = currentBooks?.filter((book) =>
+    book.title.toLowerCase().includes(searchText.toLowerCase())
+  );
+
   return {
     currentPage,
     setCurrentPage,
@@ -41,5 +46,8 @@ export default function BookHooks() {
     dataLoading,
     handleBookWishlist,
     wishlist,
+    filteredBooks,
+    setSearchText,
+    searchText,
   };
 }
