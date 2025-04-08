@@ -1,2 +1,18 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+
+.playwrite-is-title {
+  font-family: "Playwrite IS", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.navbar_backgroundColor {
+  background-color: transparent !important;
+}
+
+.navbar_Client_Link{
+ text-decoration: underline;
+}
