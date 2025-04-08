@@ -1,4 +1,4 @@
-export default function SingleBookList({ index, book }) {
+export default function SingleBookList({ index, book, navigate }) {
   return (
     <div
       key={index}
@@ -13,7 +13,10 @@ export default function SingleBookList({ index, book }) {
       <p className="mt-1 text-center">
         Language : {book.languages[0] === "en" ? "English" : "N/A"}
       </p>
-      <button className="px-4 py-1 rounded-sm text-white bg-first mt-3 cursor-pointer">
+      <button
+        onClick={() => navigate("/bookInformation", { state: book })}
+        className="px-4 py-1 rounded-sm text-white bg-first mt-3 cursor-pointer"
+      >
         Details
       </button>
     </div>

@@ -1,10 +1,12 @@
 import { useState, useMemo } from "react";
 import BookFetchHooks from "../Hooks/BookFetchHooks";
+import { useNavigate } from "react-router-dom";
 
 export default function BookHooks() {
   const { books, dataLoading } = BookFetchHooks();
+  const navigate = useNavigate();
   const [searchText, setSearchText] = useState("");
-  const [selectedGenre, setSelectedGenre] = useState(""); // <-- New state
+  const [selectedGenre, setSelectedGenre] = useState("");
 
   const [currentPage, setCurrentPage] = useState(1);
   const booksPerPage = 8;
@@ -67,5 +69,6 @@ export default function BookHooks() {
     selectedGenre,
     setSelectedGenre,
     allGenres,
+    navigate,
   };
 }
