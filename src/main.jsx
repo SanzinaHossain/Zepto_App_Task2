@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./component/Home/index.jsx";
 import React from "react";
 import WishList from "./component/WishList/index.jsx";
+import BookInformation from "./component/BookInformation/index.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/wishlist",
         element: <WishList />,
+      },
+      {
+        path: "/bookInformation",
+        element: <BookInformation />,
       },
     ],
   },

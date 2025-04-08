@@ -20,6 +20,7 @@ export default function Home() {
     selectedGenre,
     setSelectedGenre,
     allGenres,
+    navigate,
   } = BookHooks();
 
   useEffect(() => {
@@ -66,6 +67,7 @@ export default function Home() {
                     book={book}
                     handleBookWishlist={handleBookWishlist}
                     wishlist={wishlist}
+                    navigate={navigate}
                   />
                 ))
               ) : (
