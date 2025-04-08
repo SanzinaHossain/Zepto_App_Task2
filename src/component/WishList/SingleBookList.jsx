@@ -1,9 +1,6 @@
-export default function SingleBookList({ index, book, navigate }) {
+export default function SingleBookList({ book, navigate }) {
   return (
-    <div
-      key={index}
-      className="relative border border-gray-300 shadow-lg rounded-sm p-5 flex flex-col justify-center items-center"
-    >
+    <div className="relative border border-gray-300 shadow-lg rounded-sm p-5 flex flex-col justify-center items-center">
       <img src={book.formats["image/jpeg"]} alt={book.title} className="h-36" />
       <h1 className="mt-4 text-center playwrite-is-title text-first ">
         {book.title}
